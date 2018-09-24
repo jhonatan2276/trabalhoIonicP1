@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+     <ion-back-button></ion-back-button>
+  </ion-buttons>
+  <ion-title>Detalhes do Usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-img [src]="usuarioSelecionado?.foto"></ion-img>
+        <ion-card-header>
+            <ion-card-title>{{usuarioSelecionado?.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>{{usuarioSelecionado?.id}}</p>
+            <p>{{usuarioSelecionado?.email}}
+        </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,12 +1,27 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Trabalho - Login
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Acesso Usuário</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input required type="text" placeholder="Nome"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input required type="password" placeholder="Senha"></ion-input>
+          </ion-item>
+
+          <br>
+
+          <ion-button expand="full" (click)="logar()">Login</ion-button>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

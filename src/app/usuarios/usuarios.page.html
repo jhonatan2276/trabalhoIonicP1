@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de Usuários</ion-title>
+    <ion-buttons slot="end">
+        <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list inset="true">
+        <ion-item *ngFor='let usuario of usuarios' (click)="exibiDetalhes(usuario.id)">
+            <ion-avatar slot="start">
+                <img [src]="usuario.foto">
+            </ion-avatar>
+            <ion-label>
+                <h2>{{usuario.name}}</h2>
+                <h3>{{usuario.email}}</h3>
+                <p>Clique para Detalhes</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
