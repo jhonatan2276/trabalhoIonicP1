@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServicesService } from '../services.service';
 
@@ -7,12 +7,12 @@ import { ServicesService } from '../services.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
   constructor(private service: ServicesService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  usuarioNome: string;
+  usuarioSenha: string;
 
   logar() {
     this.service.usuarioAutenticado = true;
