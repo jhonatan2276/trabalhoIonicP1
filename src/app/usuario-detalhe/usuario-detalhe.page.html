@@ -14,8 +14,12 @@
             <ion-card-title>{{usuarioSelecionado?.name}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-            <p>{{usuarioSelecionado?.id}}</p>
-            <p>{{usuarioSelecionado?.email}}
+            <p><b>Detalhes do Usuário:</b></p>
+            <p>ID: {{usuarioSelecionado?.id}}</p>
+            <p>Nome: {{usuarioSelecionado?.nome}}</p>
+            <p>Email: {{usuarioSelecionado?.email}}</p>
+            <p>Currículo:</p>
+            <p>{{usuarioSelecionado?.curriculo}}</p>
         </ion-card-content>
     </ion-card>
 </ion-content>
