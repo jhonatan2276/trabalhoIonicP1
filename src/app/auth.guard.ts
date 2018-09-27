@@ -19,7 +19,11 @@ export class AuthGuard implements CanActivate {
       return true;
     }
     
-    alert("Usuário sem Permissão de Acesso")
+    this.services.alertaSimples(
+      "Alerta",
+      "Você não tem permissão para acessar o sistema",
+      "Você será redirecionado para tela de Login"
+    )
     this.router.navigate(['/home']);
     return false;
   }

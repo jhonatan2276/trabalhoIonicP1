@@ -12,8 +12,8 @@ export class UsuariosPage implements OnInit {
   constructor(private services: ServicesService, private router: Router) { }
 
   usuarios: any;
-  usuarioNome: string;
-  usuarioSobrenome: string;
+  nome: string;
+  sobrenome: string;
 
   ngOnInit() {
     this.services
@@ -22,9 +22,8 @@ export class UsuariosPage implements OnInit {
   }
 
   inverteNome(palavra) {
-    var nome = palavra.split(' ').slice(0, -1).join(' ');
-    var sobrenome = palavra.split(' ').slice(-1).join(' ');
-    return sobrenome+", "+nome
+    this.nome = palavra.split(' ').slice(0, -1).join(' ');
+    this.sobrenome = palavra.split(' ').slice(-1).join(' ')+", ";
   }
 
   exibiDetalhes(usuarioId) {

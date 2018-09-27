@@ -14,7 +14,9 @@
                 <img [src]="usuario.foto">
             </ion-avatar>
             <ion-label>
-                <h2>{{inverteNome(usuario.nome)}}</h2>
+                <!-- Chama a função que inverte os nomes -->
+                {{inverteNome(usuario.nome)}}
+                <h2><b>{{sobrenome}}</b>{{nome}}</h2>
                 <h3>{{usuario.email}}</h3>
                 <p>Clique para Detalhes</p>
             </ion-label>
