@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
       return true;
     }
     
-    this.services.alertaSimples(
+    this.services.alertaSimples (
       "Alerta",
       "Você não tem permissão para acessar o sistema",
       "Você será redirecionado para tela de Login"

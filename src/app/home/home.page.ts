@@ -15,7 +15,18 @@ export class HomePage {
   usuarioSenha: string;
 
   logar() {
-    this.service.usuarioAutenticado = true;
-    this.router.navigate(['/usuarios']);
+    if (!this.usuarioNome || !this.usuarioSenha) {
+      this.service.alertaSimples (
+        "Alerta",
+        "Ausência de Dados",
+        "Preencha todos os campos"
+      )
+    } else {
+      this.service.registraLogin(this.usuarioNome);
+      this.service.usuarioAutenticado = true;
+      this.router.navigate(['/usuarios']);
+      this.usuarioNome = "";
+      this.usuarioSenha = "";
+    }
   }
 }

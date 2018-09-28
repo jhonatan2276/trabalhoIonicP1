@@ -11,6 +11,7 @@ export class ServicesService {
   private url: string = 'https://my-json-server.typicode.com/jhonatan2276/testejson/usuarios';
   usurioId: any;
   usuarioAutenticado: boolean = false;
+  resposta: any;
 
   constructor(private http: HttpClient, private alertController: AlertController) { }
 
@@ -31,5 +32,14 @@ export class ServicesService {
 
   getUsuariosDetalhe(id) {
     return this.http.get(`${this.url}/${id}`)
+  }
+
+  registraLogin(nome: string){
+    //this.http.post("http://127.0.0.1:3000/logou", {
+    this.http.post("https://my-json-server.typicode.com/jhonatan2276/testejson/logou", {
+      nome: nome,
+      hora: new Date()
+    })
+    .subscribe(data => {this.resposta = data});
   }
 }
