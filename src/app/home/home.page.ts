@@ -9,21 +9,42 @@ import { ServicesService } from '../services.service';
 })
 export class HomePage {
 
-  constructor(private service: ServicesService, private router: Router) { }
+  constructor(private services: ServicesService, private router: Router) { }
 
   usuarioNome: string;
   usuarioSenha: string;
+  data: any = [];
 
   logar() {
+    this.services.getUsuarios()
+    .subscribe(data => {this.data = data;
+
+      //alert(this.data[0].nome);
+
+      for (let user of this.data) {
+        console.log(user.nome);
+      }
+    });
+
+      /*for (let user of this.data.users) {
+        if ((user.nome == this.usuarioNome) && (user.senha == this.usuarioSenha)) {
+          console.log("ok");
+          break;
+        } else {
+          console.log("false");
+        }
+      }
+    })*/
+  
     if (!this.usuarioNome || !this.usuarioSenha) {
-      this.service.alertaSimples (
+      this.services.alertaSimples (
         "Alerta",
         "Ausência de Dados",
         "Preencha todos os campos"
       )
     } else {
-      this.service.registraLogin(this.usuarioNome);
-      this.service.usuarioAutenticado = true;
+      this.services.registraLogin(this.usuarioNome);
+      this.services.usuarioAutenticado = true;
       this.router.navigate(['/usuarios']);
       this.usuarioNome = "";
       this.usuarioSenha = "";

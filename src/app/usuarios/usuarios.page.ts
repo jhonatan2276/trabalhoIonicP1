@@ -9,16 +9,12 @@ import { Router } from '@angular/router';
 })
 export class UsuariosPage implements OnInit {
 
-  constructor(private services: ServicesService, private router: Router) { }
+  constructor(private services: ServicesService, private router: Router) {}
 
-  usuarios: any;
   nome: string;
   sobrenome: string;
-
+  
   ngOnInit() {
-    this.services
-    .getUsuarios()
-    .subscribe(data => {this.usuarios = data});
   }
 
   inverteNome(palavra) {
